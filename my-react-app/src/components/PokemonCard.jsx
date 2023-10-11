@@ -4,12 +4,13 @@ function PokemonCard({pokemon}) {
    
     return (
     <>
-    {pokemon.imgSrc?(
+    {
+    pokemon.imgSrc?(
         <figure>
      <img src= {pokemon.imgSrc} alt="bulbasaur" />
-     <figcaption>{pokemon.name}!!!</figcaption>
+     <figcaption><h2>{pokemon.name}!!!</h2></figcaption>
      </figure>)
-    : (<p>???</p>)
+    : (<h2>???</h2>)
     }
     </>
 )};

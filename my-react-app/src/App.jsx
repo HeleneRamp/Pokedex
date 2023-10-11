@@ -1,22 +1,54 @@
+import { useState } from "react";
 import PokemonCard from "./components/PokemonCard"
 
 const pokemonList = [
   {
-      name: "Bulbasaur",
-      imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",  
+    name: "bulbasaur",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
   },
   {
-      name: "Mew",
+    name: "charmander",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  },
+  {
+    name: "squirtle",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  },
+  {
+    name: "pikachu",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+  },
+  {
+    name: "mew",
   },
 ];
 
 function App() {
-  const pokemon = pokemonList[0];
+
+  const [pokemonIndex, setPokemonIndex] = useState(0)
+
+  const decrementClick = () => {
+
+    setPokemonIndex(pokemonIndex - 1)
+
+  }
+  const incrementClick = () => {
+
+    setPokemonIndex(pokemonIndex + 1)
+
+  }
+
   return (
-    <div>
-      <PokemonCard pokemon={pokemon}/>
-    </div>
+    <>
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+   
+      <button disabled={pokemonIndex <= 0} onClick={decrementClick}>Past</button>
+      <button disabled={pokemonIndex > (pokemonList.length - 2)} onClick={incrementClick}>Next</button>
+    </>
   );
 }
 
