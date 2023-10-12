@@ -1,16 +1,23 @@
+import { Fragment } from "react"
 
 
-function NavBar({buttonNext, buttonPast, indexOf, pokemonlist}) {
-   
+
+function NavBar({pokemonlist, indexOf, setIndexOf}) {
+console.log(indexOf)
+
+const handleClick = (index) => {
+    setIndexOf(index)
+}
+
 
     return (
     <>
-    <h1>coucou</h1>
-    <button disabled={indexOf <= 0} onClick={buttonPast}>Past</button>
-      <button disabled={indexOf >= pokemonlist} onClick={buttonNext}>Next</button>
-      </>
+    {pokemonlist.map((pokemon, index) =>(
+     <button key={pokemon.name} onClick={() => handleClick(index)} >
+        {pokemon.name}</button>
+    ))}
+    </>
     )
-    
 }
 
 export default NavBar

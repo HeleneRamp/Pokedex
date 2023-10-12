@@ -4,17 +4,17 @@ import NavBar from "./components/NavBar";
 
 const pokemonList = [
   {
-    name: "bulbasaur",
+    name: "BULBASAUR",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
   },
   {
-    name: "charmander",
+    name: "CHARMANDER",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
   },
   {
-    name: "squirtle",
+    name: "SQUIRTLE",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
   },
@@ -24,7 +24,9 @@ const pokemonList = [
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
   },
   {
-    name: "mew",
+    name: "MEW",
+    imgSrc:
+    "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png",
   },
 ];
 
@@ -32,26 +34,13 @@ function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0)
 
-  const decrementClick = () => {
-
-    setPokemonIndex(pokemonIndex - 1)
-
-  }
-  const incrementClick = () => {
-
-    setPokemonIndex(pokemonIndex + 1)
-  }
-
-
-
   return (
     <>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <NavBar
-        buttonNext={incrementClick}
-         buttonPast={decrementClick} 
-         indexOf={pokemonIndex} 
-         pokemonlist={pokemonList.length - 1}
+      <NavBar 
+         pokemonlist={pokemonList}
+         indexOf = {pokemonIndex}
+         setIndexOf = {setPokemonIndex}
       />
     </>
   );
