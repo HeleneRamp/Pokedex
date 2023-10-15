@@ -1,0 +1,29 @@
+*[class^="btn"] {
+    width: 180px;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px black;
+    color: black;
+    text-align: center;
+    text-shadow: 0px 0px 5px gray;
+}
+
+.plant {
+    background-color: lightgreen;
+}
+
+.fire {
+    background-color: lightsalmon;
+}
+
+.aqua {
+    background-color: lightblue;
+}
+
+.electric {
+    background-color: yellow;
+}
+
+.psy {
+    background-color: plum;
+}

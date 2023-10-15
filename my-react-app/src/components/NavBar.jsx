@@ -1,22 +1,24 @@
-import { Fragment } from "react"
+import "./NavBar.css";
 
+function NavBar({ pokemonlist, setIndexOf }) {
 
-
-function NavBar({pokemonlist, indexOf, setIndexOf}) {
-console.log(indexOf)
-
-const handleClick = (index) => {
-    setIndexOf(index)
-}
+    const handleClick = (index) => {
+        setIndexOf(index);
+        (index) === 3 ? alert('⚡pika pikachuuuu⚡') : null;
+    }
 
 
     return (
-    <>
-    {pokemonlist.map((pokemon, index) =>(
-     <button key={pokemon.name} onClick={() => handleClick(index)} >
-        {pokemon.name}</button>
-    ))}
-    </>
+        <>
+            {pokemonlist.map((pokemon, index) => (
+                <button key={pokemon.name}
+                    onClick={() => handleClick(index)}
+                    className={(pokemon.type) === `${pokemon.type}` ? `btn ${pokemon.type}` : null}
+                >
+                    {pokemon.name}</button>
+            ))}
+
+        </>
     )
 }
 
